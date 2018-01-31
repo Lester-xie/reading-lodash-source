@@ -16,14 +16,8 @@ export default {
   components: {
     Sidebar
   },
-  data () {
-    return {
-      paths: [
-        'guide',
-        'chunk',
-        'compact'
-      ]
-    }
+  props: {
+    paths: Array
   }
 }
 </script>
