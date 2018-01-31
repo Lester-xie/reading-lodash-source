@@ -17,6 +17,9 @@ import 'vue-awesome/icons/github'
 import Icon from 'vue-awesome/components/Icon'
 Vue.component('icon', Icon)
 
+import Post from '@/components/Post.vue'
+Vue.component('post', Post)
+
 Vue.use(VueHighlightJS)
 
 Vue.config.productionTip = false

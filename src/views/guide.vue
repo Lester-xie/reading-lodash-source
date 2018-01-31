@@ -13,15 +13,9 @@
       感谢这样优秀的类库给我们提供了便利，也开源了便于学习。
     </p>
     <br>
+    <h4>感谢</h4>
     <h5>
       <a href="https://lodash.com/"><icon name="github"></icon> lodash</a>
     </h5>
   </div>
 </template>
-
-<script>
-
-  export default {
-    name: 'Guide'
-  }
-</script>

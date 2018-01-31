@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Chunk from '@/components/chunk'
-import Compact from '@/components/compact'
-import Guide from '@/components/guide'
+import Chunk from '@/views/chunk'
+import Compact from '@/views/compact'
+import Guide from '@/views/guide'
 
 Vue.use(Router)
 
