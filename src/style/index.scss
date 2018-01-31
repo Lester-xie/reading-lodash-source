@@ -1,0 +1,84 @@
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+
+.content {
+  width: 100%;
+  padding-left: 350px;
+  box-sizing: border-box;
+  padding-right: 50px;
+  padding-top: 40px;
+}
+
+.wrap {
+  width: 300px;
+  height: 100vh;
+  overflow-y: scroll;
+  border-right: 1px solid rgba(0, 0, 0, .07);
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+#search {
+  box-sizing: border-box;
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+#search:focus {
+  border-bottom: 1px solid #22ab28;
+  box-shadow: 0 1px 0 0 #22ab28;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  height: 45px;
+  cursor: pointer;
+  transition: .3s ease-out;
+}
+
+li:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+li.activeClass {
+  background-color: #22ab28;
+}
+
+li.activeClass a {
+  color: #fff;
+}
+
+li a {
+  display: block;
+  height: 45px;
+  line-height: 45px;
+  box-sizing: border-box;
+  padding-left: 50px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 500;
+}
+
+h3 {
+  color: #22ab28;
+}
+
+h5 a {
+  color: #22ab28;
+}
+
+.github {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  color: #2c3e50;
+}
