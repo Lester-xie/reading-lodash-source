@@ -12,3 +12,4 @@
 # progress
 * [x] chunk
 * [x] compact
+* [x] concat
