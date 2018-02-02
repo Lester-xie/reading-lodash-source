@@ -1,39 +1,79 @@
 <template>
-  <post :methodName="`concat(array, [values])`">
+  <post :methodName="`difference(array, [values])`">
     <template slot="explain">
-      创建一个新数组，将array与任何数组 或 值连接在一起。
+      创建一个具有唯一array值的数组，每个值不包含在其他给定的数组中
     </template>
     <template slot="selfCode">
-      function concat(array, ...values) {
+      function difference(array, values) {
+        let index = 0
         let result = []
-        let resultIndex = 0
-
-        for (let i of array) {
-          result[resultIndex++] = i
+      if (!Array.isArray(array) || !Array.isArray(values)) {
+          return array
         }
-        for (let j of values) {
-          result = result.concat(j)
+        for (let i of array) {
+          if (!values.includes(i)) {
+            result[index++] = i
+          }
         }
         return result
       }
-      let arr = [1]
-      concat(arr, 2, [3], [[4]])      //[1, 2, 3, [4]]
+
+      difference([1, 2, 3], [3])  //[1, 2]
     </template>
     <template slot="lodashCode">
-      function concat() {
-        var length = arguments.length;
-        if (!length) {
-          return [];
-        }
-        var args = Array(length - 1),
-        array = arguments[0],
-        index = length;
+      var difference = baseRest(function(array, values) {
+        return isArrayLikeObject(array)
+        ? baseDifference(array, baseFlatten(values, 1, isArrayLikeObject, true))
+        : [];
+      });
 
-        while (index--) {
-          args[index - 1] = arguments[index];
+      function baseDifference(array, values, iteratee, comparator) {
+        var index = -1,
+        includes = arrayIncludes,
+        isCommon = true,
+        length = array.length,
+        result = [],
+        valuesLength = values.length;
+
+        if (!length) {
+          return result;
         }
-        return arrayPush(isArray(array) ? copyArray(array) : [array], baseFlatten(args, 1));
+        if (iteratee) {
+          values = arrayMap(values, baseUnary(iteratee));
+        }
+        if (comparator) {
+          includes = arrayIncludesWith;
+          isCommon = false;
+        }
+        else if (values.length >= LARGE_ARRAY_SIZE) {
+          includes = cacheHas;
+          isCommon = false;
+          values = new SetCache(values);
+        }
+        outer:
+        while (++index < length) {
+          var value = array[index],
+          computed = iteratee == null ? value : iteratee(value);
+
+          value = (comparator || value !== 0) ? value : 0;
+          if (isCommon && computed === computed) {
+            var valuesIndex = valuesLength;
+            while (valuesIndex--) {
+              if (values[valuesIndex] === computed) {
+                continue outer;
+              }
+            }
+            result.push(value);
+          }
+          else if (!includes(values, computed, comparator)) {
+            result.push(value);
+          }
+        }
+        return result;
       }
+    </template>
+    <template slot="lodashComment">
+      我发现我思维似乎有点没转换过来，lodash 用了函数式编程的概念来写，我依然在保持着过程式编程
     </template>
   </post>
 </template>

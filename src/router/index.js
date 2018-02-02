@@ -5,7 +5,8 @@ const views = [
   require('@/views/guide'),
   require('@/views/chunk'),
   require('@/views/compact'),
-  require('@/views/concat')
+  require('@/views/concat'),
+  require('@/views/difference')
 ].map(i => {
   let name = i.default.__file.split('/')[2].slice(0, -4)
   return {
