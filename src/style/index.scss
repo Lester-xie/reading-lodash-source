@@ -32,30 +32,30 @@
   box-shadow: 0 1px 0 0 #22ab28;
 }
 
-ul {
+ul.sidebar {
   padding: 0;
   margin: 0;
 }
 
-li {
+.sidebar li {
   height: 45px;
   cursor: pointer;
   transition: .3s ease-out;
 }
 
-li:hover {
+.sidebar li:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-li.activeClass {
+.sidebar li.activeClass {
   background-color: #22ab28;
 }
 
-li.activeClass a {
+.sidebar li.activeClass a {
   color: #fff;
 }
 
-li a {
+.sidebar li a {
   display: block;
   height: 45px;
   line-height: 45px;
@@ -73,7 +73,13 @@ h3 {
 h5 a {
   color: #22ab28;
 }
+.success {
+  color: #22ab28;
+}
 
+.error {
+  color: #ee6e73;
+}
 .github {
   position: fixed;
   top: 10px;
@@ -91,4 +97,13 @@ h5 a {
   font-style: italic;
   background-color: #fafafa;
   color: #0A2E36;
+}
+
+ul.guide_ul {
+  padding-left: 20px;
+  list-style-type: circle;
+}
+
+ul.guide_ul li {
+  list-style-type: circle;
 }

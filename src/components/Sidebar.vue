@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
   <input type="text" placeholder="Search" id="search" v-model="search">
-  <ul>
+  <ul class="sidebar">
     <li v-for="path in paths" :key="path" :class="active === path && 'activeClass'" v-show="path.indexOf(search) > -1">
       <a :href="`#/${path}`">{{path}}</a>
     </li>
