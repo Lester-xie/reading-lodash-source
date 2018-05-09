@@ -9,15 +9,14 @@ import 'vue-highlightjs/node_modules/highlight.js/styles/atom-one-light.css'
 
 // Import Vue and vue-highlgihtjs
 import VueHighlightJS from 'vue-highlightjs'
-
-
 // Tell Vue.js to use vue-highlightjs
 
-import 'vue-awesome/icons/github'
-import Icon from 'vue-awesome/components/Icon'
-Vue.component('icon', Icon)
-
+// import 'vue-awesome/icons/github'
+// import Icon from 'vue-awesome/components/Icon'
 import Post from '@/components/Post.vue'
+
+// Vue.component('icon', Icon)
+
 Vue.component('post', Post)
 
 Vue.use(VueHighlightJS)
