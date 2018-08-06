@@ -5,7 +5,7 @@
       <slot name="explain"></slot>
     </div>
     <div class="divider"></div>
-    <h3>Myself</h3>
+    <h3>Mine</h3>
     <div>
       <pre v-highlightjs>
         <code class="javascript">
